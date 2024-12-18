@@ -1,0 +1,1508 @@
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Itim', sans-serif;
+}
+
+html {
+    font-size: 16px;   
+    background-color: var(--bgColor);
+}
+
+:root {
+    --colorGold1: #b8761a;
+    --colorGold: #b6823a;
+    --btnCover: rgba(0,0,0,0.2);
+    --bgColor: #e6e1d3;
+    --bgColor1: #534825;
+}
+
+.scrolled {
+    background-color: #111 !important;
+    transition: background-color 0.3s;
+}
+
+.width1 {
+    width: 1000px;
+} 
+
+.width2 {
+    width: 800px;
+} 
+
+
+
+
+.btn {
+    width: 15rem;
+    height: 3rem;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;    
+    position: relative;
+    border-radius: 0.3rem;
+}
+
+.btn::before,
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--btnCover);
+}
+
+.btn::before {
+    right: 0;
+    border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.btn::after {
+    left: 0;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+    width: 0;
+    transition: width 0.3s ease-out;
+}
+
+
+
+
+
+.hidden {
+    display: none !important;
+}
+
+.marginTop {
+    margin-top: 6rem !important;
+}
+
+.marginBottom {
+    margin-bottom: 12rem !important;
+}
+
+.expandMoreInfoInstructor {
+    width: 650px !important;
+    transition: width 0.5s ease;
+}
+
+.showMoreInfoInstructor {
+    opacity: 1 !important;
+}
+
+.absolutePositionMoreInfoInstructor {
+    position: absolute !important;
+}
+
+
+
+
+
+/* header */
+/* ================================================================================================== */
+
+
+/* header - large screen */
+
+header {
+    width: 100%;
+    height: 140px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0 2rem;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.3s;
+}
+
+.headerLargeScreen {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.mainNavLargeScreen ul {
+    display: flex;
+}
+
+.mainNavLargeScreen li,
+.languageSwitcher li {
+    padding: 0 2rem;
+    list-style-type: none;
+}
+
+.mainNavLargeScreen li:hover .subMenu,
+.languageSwitcher li:hover .subMenuLanguage {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease-out, transform 0.5s ease;
+}
+
+.mainNavLargeScreen a,
+.languageSwitcher a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.mainNavLargeScreen a,
+.languageSwitcher span {
+    padding-bottom: 0.1rem;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.mainNavLargeScreen>ul>li>a:hover,
+.languageSwitcher span:hover {
+    color: #fff;
+}
+
+.mainNavLargeScreen>ul>li>a::after,
+.languageSwitcher span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0.4rem;
+    left: 0;
+    height: 0.15rem;
+    background-color: var(--colorGold1);
+    transition: width 0.4s ease;
+}
+
+.mainNavLargeScreen>ul>li>a:hover::after,
+.languageSwitcher span:hover::after {
+    width: 100%;
+    transition: width 0.4s ease;
+}
+
+.logoLargeScreen,
+.mainNavLargeScreen,
+.socialMedia,
+.languageSwitcher {
+    display: flex;
+    align-items: center;
+}
+
+.logoLargeScreen img {
+    height: 4rem;
+    margin-right: 0.5rem;
+}
+
+.logoLargeScreen span {
+    color: #fff;
+}
+
+.logoLargeScreen div {
+    display: flex;
+    flex-direction: column;
+}
+
+.socialMedia {
+    margin-right: 3rem;
+}
+
+.socialMedia img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.socialMedia img:hover {
+    transform: scale(1.05);
+}
+
+.socialMedia a {
+    padding: 0 0.4rem;
+}
+
+.socialMediaAndLanguageSwitcher {
+    display: flex;
+}
+
+
+
+
+.mainMenu,
+.mainMenuLanguage {
+    position: relative;
+}
+
+.subMenu,
+.subMenuLanguage {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    padding-top: 51px;
+}
+
+
+
+.subMenu li,
+.subMenuLanguage li {
+    padding: 1rem 1rem;
+    background-color: #333;
+    border-bottom: 0.1rem solid #aaa;
+    transition: background-color 0.1s ease;
+}
+
+.subMenu li:last-child,
+.subMenuLanguage li:last-child {
+    border-bottom: none;
+}
+
+.subMenu a,
+.subMenuLanguage a {
+    display: block;
+    padding: 0;
+}
+
+.subMenu li:hover,
+.subMenuLanguage li:hover {
+    background-color: #000;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.subMenuLanguage {
+    width: 55px;
+    top: 89px;
+    right: 45px;
+}
+
+.subMenu {
+    width: 170px;
+    top: 28px;
+    left: 17px;
+}
+
+
+
+
+/* header - small screen */
+
+.headerSmallScreen {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: space-between;
+}
+
+.logoHolderSmallScreen {
+    display: flex;
+    align-items: center;
+}
+
+.logoHolderSmallScreen img {
+    height: 4rem;
+    margin-right: 0.5rem;
+}
+
+.logoHolderSmallScreen span {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.logoHolderSmallScreen div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.mainNavButtonHolderSmallScreen {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.mainNavButtonSmallScreen {
+    border-radius: 50%;
+    width: 3.5em;
+    height: 3.5rem;
+    position: relative;
+    box-shadow: 0 0 4px #aaa;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainNavButtonSmallScreen img {
+    width: 2rem;
+    height: 2rem;
+    background-color: #000;
+    position: absolute;
+}
+
+.mainNavButtonSmallScreen img:hover {
+    cursor: pointer;
+}
+
+.mainNavButtonSmallScreen img:first-child {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+
+
+.mainNavSmallScreen {
+    z-index: -5;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    opacity: 0;
+    background-color: #333;
+    visibility: hidden;
+}
+
+.mainNavSmallScreen li {
+    text-align: center;
+    list-style-type: none;
+    padding: 1.5rem 0;
+    background-color: #333;
+    transition: background-color 0.1s ease;
+    box-shadow: 0 0 4px #555;
+}
+
+.mainNavSmallScreen li:hover {
+    background-color: #000;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.mainNavSmallScreen a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+
+.languageSwitcherSmallScreen {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 5rem;
+    height: 5rem;
+}
+
+.languageSwitcherSmallScreen ul li {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+/* main */
+/* ================================================================================================== */
+
+main {
+    position: relative;
+}
+
+
+
+
+
+/* home background */
+/* ================================================================================================== */
+
+.homeBackground {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('../images/background/bg1.jpg') center / cover no-repeat fixed;
+}
+
+.homeBackground::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.homeBackground::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 0;
+}
+
+.homeBackgroundContent {
+    margin-top: 5rem;
+    margin-left: 15rem;
+    width: 30rem;
+    z-index: 1;
+}
+
+.headingWhite {
+    font-size: 3rem;
+    color: #ddd;
+}
+
+.headingGold {
+    font-size: 3rem;
+    color: var(--colorGold1);
+}
+
+.homeBackgroundContent p {
+    color: #ddd;
+    margin: 5rem 0;
+    font-size: 1.5rem;
+}
+
+.findOutMoreBtn {
+    position: relative;
+    background: linear-gradient(to top, #925e16, var(--colorGold1));
+}
+
+
+
+
+
+/* choose your section */
+/* ================================================================================================== */
+
+.chooseYourSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainTitle {
+    color: #333;
+    font-size: 1.7rem;
+    border-bottom: 0.15rem solid var(--colorGold1);
+    margin-bottom: 5rem;
+    width: auto;
+}
+
+.subTitle {
+    margin-top: 1rem;
+    color: var(--colorGold1);
+    font-size: 1.1rem;
+}
+
+.sectionsHolder {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+}
+
+
+.sectionsHolder a {
+    text-decoration: none;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.section:active img {
+    box-shadow: 0 0 8px #000;
+    transition: transform 0.3s ease;
+}
+
+.section img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #888;
+}
+
+
+
+
+
+
+/* one section */
+/* ================================================================================================== */
+
+.oneSection {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.oneSectionContent {
+    display: flex;
+    height: 100%;
+}
+
+.oneSectionText {
+    padding-right: 5rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.oneSectionImage {
+    width: 50%;
+    height: 100%;
+}
+
+.oneSectionImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.oneSectionTitle {
+    margin-top: 4rem;
+    font-size: 1.2rem;
+}
+
+.oneSectionText p {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.oneSectionTextMainTitle {
+    display: flex;
+}
+
+.oneSectionTextMainTitle h2 {
+    font-size: 1.7rem;
+    border-bottom: 0.15rem solid var(--colorGold1);
+}
+
+.oneSection .backToSections {
+    display: none;
+    width: 3.5rem;
+    height: auto;
+    position :absolute;
+    top: 12rem;
+    right: 2rem;
+}
+
+.oneSection .backToSections:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+/* home sentences */
+/* ================================================================================================== */
+
+.homeSentences {
+    background: url('../images/background/bg8.jpg') center / cover no-repeat;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+}
+
+.homeSentenceHolder {
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.homeSentenceHolder p {
+    font-family: "Italianno", cursive;
+    color: #fff;
+    font-size: 2.3rem;
+    width: auto;
+    transform: translateX(700px);
+}
+
+
+
+
+
+/* any question */
+/* ================================================================================================== */
+
+.anyQuestion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.anyQuestion p {
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.anyQuestion span {
+    z-index: 3;
+}
+
+.anyQuestionBtn {
+    background: linear-gradient(to top, #222, #444);
+    color: #fff;
+    position: relative;
+}
+
+.anyQuestionHolder {
+    height: auto;
+    padding: 4rem 0;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    background-color: var(--colorGold);
+    position: absolute;
+    bottom: -185px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* footer */
+/* ================================================================================================== */
+
+footer {
+    width: 100%;
+    height: auto;
+    background: url('../images/background/bg2.jpg') center / cover no-repeat fixed;
+    position: relative;
+    color: #ddd;
+}
+
+footer::after {
+    content: '';
+    width: 100%; 
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 0;
+}
+
+.footerTopAndBottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    z-index: 1;
+}
+
+.footerTop img {
+    height: 1rem;
+    margin-right: 0.7rem;
+}
+
+.footerTop p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+
+}
+
+.footerTop h4 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#footerBottom {
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid #777;
+    z-index: 1;
+}
+
+.contactHolder,
+.operatingHoursHolder,
+.socialMediaFooterHolder {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 0.15rem solid var(--colorGold1);
+}
+
+.socialMediaFooter {
+    width: 100%;
+}
+
+.socialMediaFooter {
+    display: none;
+}
+
+
+
+
+/* sections background */
+/* ================================================================================================== */
+
+.headerBackground {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 140px;
+    align-items: center;
+    
+}
+
+.headerBackground::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 140px;
+    background: url('../images/background/bg1.jpg') center / cover no-repeat fixed;
+    z-index: -2;
+}
+
+.headerBackground::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 140px;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+
+
+
+
+/* about us */
+/* ================================================================================================== */
+
+.aboutTheSchool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutTheSchool p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.aboutTheSchool img {
+    margin-top: 100px;
+}
+
+
+
+.ourTeam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ourTeam h2 {
+    text-align: center;
+}
+
+
+
+
+/* about us - large screen */ 
+
+.teamHolderLargeScreen {
+    grid-template-columns: 220px 220px;
+    column-gap: 560px;
+    row-gap: 5rem;
+}
+
+.instructorHolderLargeScreen {
+    width: 220px;
+    height: 280px;   
+    position: relative;
+}
+
+.instructorLargeScreen {
+    width: 220px;
+    height: 280px;   
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    display: flex;
+    box-shadow: 0 0 10px #aaa;
+    transform: translateY(5px);
+    transition: all 0.5s ease;
+    position: absolute;
+}
+
+.positionRight {
+    right: 0;
+    justify-content: flex-end;
+}
+
+.positionRight .instructorImgLargeScreen {
+    order: 2
+}
+
+.positionRight .instructorTextLargeScreen {
+    order: 1
+}
+
+.instructorLargeScreen:hover {
+    cursor: pointer;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.instructorLargeScreen img {
+    height: 12rem;
+    width: 10rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.instructorLargeScreen h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: var(--colorGold1);
+    margin-top: 0.5rem;
+}
+
+.instructorLargeScreen h4 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-top: 0.2rem;
+}
+
+.instructorImgLargeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instructorTextLargeScreen {
+    height: 180px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+} 
+
+.positionLeft .instructorTextLargeScreen {
+    padding-left: 2rem;
+}
+
+.positionRight .instructorTextLargeScreen {
+    padding-right: 2rem;
+} 
+
+
+
+
+
+/* about us - smallscreen */ 
+
+.teamHolderSmallScreen {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+}
+
+.instructorSmallScreen {
+    padding: 1rem 0.5rem;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 0 0 10px #aaa;
+    transform: translateY(5px);
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.instructorSmallScreen:hover {
+    cursor: pointer;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.instructorSmallScreen img {
+    height: 10rem;
+    width: 8.5rem;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.instructorSmallScreen h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: var(--colorGold1);
+    margin-top: 0.5rem;
+}
+
+.instructorSmallScreen h4 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-top: 0.2rem;
+}
+
+.instructorImgSmallScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+/* about us - smallscreen - modal */
+
+.instructorModalSmallScreen {
+    z-index: 1;
+    transform: scale(0);
+    position: absolute;
+    border-radius: 1rem;
+    background-color: #fefefe;
+    box-shadow: 0 0 4px #999;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.instructorModalTopSmallScreen {
+    display: flex;
+}
+
+.instructorModalTopSmallScreen img {
+    transition: all 0.3s ease;
+}
+
+.instructorModalTopSmallScreen p {
+    font-size: 1.35rem;
+}
+
+.instructorModalTopNameSmallScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.instructorModalTopNameSmallScreen h3 {
+    font-size: 1.5rem;
+}
+
+.instructorModalBottomSmallScreen {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.instructorModalBottomSmallScreen p {
+    font-size: 1.1rem;
+}
+
+.closeInstructorModalButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;   
+    border-radius: 0 1rem 0 1rem;
+    background-color: var(--colorGold1);
+    box-shadow: 0 0 2px #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.closeInstructorModalButton:hover {
+    background-color: #d8912c;
+}
+
+
+
+/* about us - initial state for large screen */ 
+
+.teamHolderLargeScreen {
+    display: grid;
+}
+
+.teamHolderSmallScreen {
+    display: none;
+}
+
+
+
+
+
+/* contact */
+/* ================================================================================================== */
+
+.contactComponent {
+    margin: 0 auto;
+    height: auto;
+}
+
+.contactDetailsHolder,
+.sendUsMessageHolder,
+.findUsHereHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactDetailsHolder .contacts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactDetailsHolder .contacts > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactDetailsHolder .contacts img {
+    width: 5rem;
+    height: auto;
+}
+
+.contactDetailsHolder .contacts a {
+    padding: 1rem;
+    text-decoration: none;
+    color: #111;
+}
+
+.contactDetailsHolder .contacts div:first-child a:hover,
+.contactDetailsHolder .contacts div:last-child a:hover {
+    cursor: pointer;
+    color: var(--colorGold1);
+    transition: color 0.2s ease;
+}
+
+.contactDetailsHolder .contacts div:nth-child(2) a:hover {
+    cursor: auto;
+}
+
+.contactDetailsHolder .contacts div:first-child:hover img,
+.contactDetailsHolder .contacts div:last-child:hover img {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
+
+.sendUsMessageHolder form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.sendUsMessageHolder form input,
+.sendUsMessageHolder form textarea,
+.sendUsMessageHolder form button {
+    width: 100%;
+}
+
+.sendUsMessageHolder form input,
+.sendUsMessageHolder form textarea {
+    border: 1px solid #aaa;
+    border-radius: 0.3rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.05rem;
+    outline: none;
+}
+
+.sendUsMessageHolder form input:focus,
+.sendUsMessageHolder form textarea:focus {
+    box-shadow: 0 0 2px #000;
+}
+
+.sendUsMessageBtn {
+    margin-top: 2rem;
+    background: linear-gradient(to top, #925e16, var(--colorGold1));
+}
+
+.sendUsMessageSuccess {
+    background: linear-gradient(to top, #166628, #279340);
+}
+
+.sendUsMessageLoading {
+    background: linear-gradient(to top, #006a70, #00a8b1);
+}
+
+.sendUsMessageError {
+    background: linear-gradient(to top, #9f2d2d, #be4444);
+}
+
+
+.findUsHereHolder iframe {
+    width: 100%;
+}
+
+
+
+
+
+/* screen 700px < 1100px */
+/* ================================================================================================== */
+
+@media screen and (700px < width < 1100px){
+    .width1 {
+        width: 650px;
+    } 
+
+    .width2 {
+        width: 600px;
+    }
+
+    html {
+        font-size: 14px;   
+    }
+
+    .teamHolderLargeScreen {
+        display: none;
+    }
+    
+    .teamHolderSmallScreen {
+        display: grid;
+    }
+
+    .headerLargeScreen {
+        display: grid;
+        grid-template-areas: 'logo socialMedia'
+                             'nav  nav ';
+    }
+
+    .logoLargeScreen {
+       grid-area: logo; 
+    }
+
+    .socialMediaAndLanguageSwitcher {
+        grid-area: socialMedia; 
+        justify-self: end;
+    }
+
+    .mainNavLargeScreen {
+        grid-area: nav; 
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .subMenuLanguage {
+        top: 60px;
+        right: 32px;
+        padding-top: 80px;
+    }
+
+    .subMenu {
+        top: 28px;
+        left: 15px;
+        padding-top: 16px;
+    }
+    
+    .sectionsHolder {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 4rem;
+    }
+
+    .anyQuestionHolder {
+        padding: 3rem;
+        bottom: -150px;
+    }
+
+    .anyQuestionHolder p {
+        margin-right: 2rem;
+    }
+
+    .homeBackgroundContent {
+        margin-left: 7rem;
+    }
+
+    .positionRightHolder {
+        margin-left: 430px;
+    }
+
+    .oneSection {
+        height: auto;
+    }
+
+    .oneSectionContent {
+        flex-direction: column;
+    }
+
+    .oneSectionText {
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .oneSectionImage {
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    .instructorModalSmallScreen {
+        height: 550px;
+    }
+
+    .instructorModalTopSmallScreen img {
+        height: 20rem;
+        width: auto;
+        margin-right: 2rem;
+    }
+
+    .instructorModalTopNameSmallScreen h3 {
+        margin-bottom: 3rem;
+    }
+
+    .instructorModalBottomSmallScreen {
+        height: 50%;
+    }
+
+}
+
+
+
+
+
+/* screen < 700px */
+/* ================================================================================================== */
+
+@media screen and (max-width:700px) {
+    .width1 {
+        width: 350px;
+    } 
+
+    .width2 {
+        width: 250px;
+    }
+
+    html {
+        font-size: 14px;   
+    }
+
+    .teamHolderLargeScreen {
+        display: none;
+    }
+    
+    .teamHolderSmallScreen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .sectionsHolder {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 5rem;
+    }
+
+    .homeBackgroundContent {
+        padding: 0 1rem;
+        margin: auto;
+    }
+
+    .anyQuestionHolder {
+        padding: 3rem;
+        bottom: -190px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .anyQuestionHolder p {
+        margin-bottom: 2rem;
+    }
+
+    .contacts {
+        flex-direction: column;
+    }
+
+    .contacts > div {
+        margin-bottom: 3rem;
+    } 
+
+    .contacts > div:last-child {
+        margin-bottom: 0;
+    } 
+
+    .oneSection {
+        height: auto;
+    }
+
+    .oneSectionContent {
+        flex-direction: column;
+    }
+
+    .oneSectionText {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .oneSectionImage {
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    .oneSectionTextMainTitle {
+        justify-content: center;
+    }
+
+    .oneSectionTextOneSectionTitle > p {
+        text-align: justify;
+    }
+
+    .oneSectionTextOneSectionTitle > h4 {
+        text-align: start;
+    }
+
+    .footerTop {
+        flex-direction: column;
+    }
+    
+    .footerTop > div {
+        margin-bottom: 5rem;
+    }
+
+    .socialMediaFooter {
+        z-index: 1;
+        display: block;
+    }
+    
+    .socialMedia img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .socialMediaFooterHolder {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .socialMediaAndLanguageSwitcher,
+    .mainNavLargeScreen {
+        display: none;
+    }
+
+    .aboutTheSchool img {
+        margin-top: 50px;
+    }
+
+    .teamHolder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .instructorModalSmallScreen {
+        height: 720px;
+    }
+
+    .instructorModalTopSmallScreen {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .instructorModalTopSmallScreen img {
+        order: 2;
+        height: 18rem;
+        width: auto;
+        margin-top: 2rem;
+    }
+
+    .instructorModalTopNameSmallScreen h3 {
+        margin-bottom: 2rem;
+    }
+
+    .instructorModalBottomSmallScreen {
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    .headerSmallScreen {
+        display: flex;
+    }
+
+    .headerLargeScreen {
+        display: none;
+    }
+
+    .btn {
+        width: 18rem;
+        height: 4rem;
+        font-size: 1.4rem;
+    }
+
+    .sendUsMessageHolder form {
+        width: 80%;
+    }
+
+    .sendUsMessageHolder form input,
+    .sendUsMessageHolder form textarea {
+        font-size: 1.3rem;
+    }
+
+    .contactDetailsHolder .contacts a {
+        font-size: 1.2rem;
+    }
+
+    footer,
+    .homeBackground {
+        background-attachment: scroll;
+    }
+
+    .oneSection .backToSections {
+        display: block;
+    }
+}

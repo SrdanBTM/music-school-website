@@ -340,6 +340,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .mainNavButtonSmallScreen img {
@@ -379,6 +380,7 @@ header {
     background-color: #333;
     transition: background-color 0.1s ease;
     box-shadow: 0 0 4px #555;
+    user-select: none;
 }
 
 .mainNavSmallScreen li:hover {

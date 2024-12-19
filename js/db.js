@@ -227,7 +227,7 @@ let languages = {
                 title: 'PIANO',
                 dataId: 'piano',
                 id: 'chooseYourSectionPiano',
-                image: 'images/instruments/piano.webp'
+                image: 'images/instruments/piano.jpg'
             },
             guitar: {
                 title: 'GUITAR',
@@ -257,7 +257,7 @@ let languages = {
                 title: 'VOCAL TRAINING',
                 dataId: 'vocal',
                 id: 'chooseYourSectionVocal',
-                image: 'images/instruments/vocal.webp'
+                image: 'images/instruments/vocal.jpg'
             }
         },
 
@@ -276,7 +276,7 @@ let languages = {
                 startDate: 'Classes start in September and continue through June.',
                 instructorName: 'Samantha King',
                 instructorDescription: ', a professional pianist with extensive experience, teaches students of all levels.',
-                image: 'images/instruments/piano.webp',
+                image: 'images/instruments/piano.jpg',
                 button: 'Join the Piano Section'
             },
             guitar: {
@@ -331,7 +331,7 @@ let languages = {
                 startDate: 'Classes begin in September.',
                 instructorName: 'Emily Clark',
                 instructorDescription: ', a professional vocalist with extensive experience, expertly trains voices of all types and levels.',
-                image: 'images/instruments/vocal.webp',
+                image: 'images/instruments/vocal.jpg',
                 button: 'Join the Vocal Training Section'
             }
         }
@@ -560,7 +560,7 @@ let languages = {
                 title: 'KLAVIER',
                 dataId: 'piano',
                 id: 'chooseYourSectionPiano',
-                image: 'images/instruments/piano.webp'
+                image: 'images/instruments/piano.jpg'
             },
             guitar: {
                 title: 'GITARRE',
@@ -590,7 +590,7 @@ let languages = {
                 title: 'GESANGSTRAINING',
                 dataId: 'vocal',
                 id: 'chooseYourSectionVocal',
-                image: 'images/instruments/vocal.webp'
+                image: 'images/instruments/vocal.jpg'
             }
         },
 
@@ -609,7 +609,7 @@ let languages = {
                 startDate: 'Der Unterricht beginnt im September und geht bis Juni.',
                 instructorName: 'Samantha King',
                 instructorDescription: ', eine professionelle Pianistin mit umfangreicher Erfahrung, unterrichtet Schüler aller Niveaus.',
-                image: 'images/instruments/piano.webp',
+                image: 'images/instruments/piano.jpg',
                 button: 'Zur Klaviersektion beitreten'
             },
             guitar: {
@@ -664,7 +664,7 @@ let languages = {
                 startDate: 'Der Unterricht beginnt im September.',
                 instructorName: 'Emily Clark',
                 instructorDescription: ', eine professionelle Sängerin mit umfassender Erfahrung, bietet exzellentes Training für Stimmen aller Arten und Niveaus.',
-                image: 'images/instruments/vocal.webp',
+                image: 'images/instruments/vocal.jpg',
                 button: 'Zur Gesangsausbildungssektion beitreten'
             }
         }

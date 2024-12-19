@@ -245,7 +245,7 @@ let languages = {
                 title: 'MUSIC THEORY',
                 dataId: 'theory',
                 id: 'chooseYourSectionTheory',
-                image: 'images/instruments/theory.jpeg'
+                image: 'images/instruments/theory.jpg'
             },
             percussion: {
                 title: 'PERCUSSION',
@@ -309,7 +309,7 @@ let languages = {
                 startDate: 'Classes commence in September.',
                 instructorName: 'Michael Reed',
                 instructorDescription: ', a seasoned music theory expert, provides in-depth instruction to support practical musicianship.',
-                image: 'images/instruments/theory.jpeg',
+                image: 'images/instruments/theory.jpg',
                 button: 'Join the Music Theory Section'
             },
             percussion: {
@@ -578,7 +578,7 @@ let languages = {
                 title: 'MUSIKTHEORIE',
                 dataId: 'theory',
                 id: 'chooseYourSectionTheory',
-                image: 'images/instruments/theory.jpeg'
+                image: 'images/instruments/theory.jpg'
             },
             percussion: {
                 title: 'SCHLAGZEUG',
@@ -642,7 +642,7 @@ let languages = {
                 startDate: 'Der Unterricht beginnt im September.',
                 instructorName: 'Michael Reed',
                 instructorDescription: ', ein erfahrener Musiktheorie-Experte, bietet fundierten Unterricht zur Unterstützung der praktischen Musikausbildung.',
-                image: 'images/instruments/theory.jpeg',
+                image: 'images/instruments/theory.jpg',
                 button: 'Zur Musiktheorie-Sektion beitreten'
             },
             percussion: {

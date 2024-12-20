@@ -1,4 +1,4 @@
-# Music School Portfolio
+# Music School Website
 
 A responsive portfolio website for a music school, built with pure JavaScript, HTML, and CSS. The site includes sections about the school's offerings, instructors, and a contact form for communication. The website supports language switching between **English (EN)** and **German (DE)**.
 
